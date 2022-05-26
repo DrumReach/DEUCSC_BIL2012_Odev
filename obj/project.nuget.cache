@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WOM39HNco+rWD71CPxG5p+BHKvKhENFiFh5NtTsomls2C8qTutPVw7MZwggIgJGJYhRvegRM4bijGYVQ4rhVtw==",
+  "success": true,
+  "projectFilePath": "/home/rtune/Code/OOP/BIL2012_OOP_Odev/BIL2012_OOP_Odev.csproj",
+  "expectedPackageFiles": [
+    "/home/rtune/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.2/microsoft.aspnetcore.app.ref.6.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
