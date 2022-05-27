@@ -32,17 +32,23 @@ namespace Yarisma
         public Yarisma(string filePath, uint length)
         {
             TrackLength = length;
-
-            //Read from file
-            string[] lines = File.ReadAllLines(filePath);
-            string[] parts;
-
             IYarismaci yarismaci;
             yarismacilar = new List<IYarismaci>();
 
-            //check if file is empty
-            if(lines is not null)
+            //Read from file
+            
+
+            try
             {
+                string[] lines = File.ReadAllLines(filePath);
+                
+                //check if file is empty
+                if(lines.Length == 0)
+                    throw new MissingFieldException("FILE IS EMPTY!");
+                
+                string[] parts;
+
+
                 foreach(string line in lines)
                 {
                     //Split and assign
@@ -80,10 +86,12 @@ namespace Yarisma
                     
                 }
             }
-            else
+            catch (IOException ex)
             {
-                throw new Exception("File is empty");
+                Console.WriteLine(ex.Message);
             }
-        }
+
+
+        }//Constructor
     }
 }
