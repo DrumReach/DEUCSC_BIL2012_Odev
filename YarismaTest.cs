@@ -12,15 +12,20 @@ namespace Yarisma
         {
             Yarisma testYarismasi = new Yarisma("yarismacilar.txt", 45);
 
-            testYarismasi.Baslat();
-            testYarismasi.KonumlariYazdir();
+            // DEBUG
+             
 
-            Console.Write("\n\nYENİDENA\n\n\n");
 
-            testYarismasi.Baslat();
-            testYarismasi.KonumlariYazdir();
 
-            Console.ReadKey();
+
+            //testYarismasi.Baslat();
+            //testYarismasi.KonumlariYazdir();
+
+            //Console.Write("\n\nYENİDENA\n\n\n");
+
+            //testYarismasi.Baslat();
+            //testYarismasi.KonumlariYazdir();
+
         }
     }
 }

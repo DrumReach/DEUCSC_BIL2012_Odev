@@ -1,0 +1,15 @@
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/bin/Debug/net6.0/BIL2012_OOP_Odev
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/bin/Debug/net6.0/BIL2012_OOP_Odev.deps.json
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/bin/Debug/net6.0/BIL2012_OOP_Odev.runtimeconfig.json
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/bin/Debug/net6.0/BIL2012_OOP_Odev.dll
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/bin/Debug/net6.0/ref/BIL2012_OOP_Odev.dll
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/bin/Debug/net6.0/BIL2012_OOP_Odev.pdb
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.csproj.AssemblyReference.cache
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.GeneratedMSBuildEditorConfig.editorconfig
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.AssemblyInfoInputs.cache
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.AssemblyInfo.cs
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.csproj.CoreCompileInputs.cache
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.dll
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/ref/BIL2012_OOP_Odev.dll
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.pdb
+/home/rtune/Code/OOP/BIL2012_OOP_Odev/obj/Debug/net6.0/BIL2012_OOP_Odev.genruntimeconfig.cache
