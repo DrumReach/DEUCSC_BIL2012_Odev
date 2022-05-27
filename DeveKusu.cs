@@ -8,6 +8,6 @@ namespace Yarisma
            
        }
 
-       public override string ToString() => $"Contestant : {this.Number} - {this.Name} (Deve Kusu)";
+       public override string ToString() => $"Contestant {this.Number} : {this.Name} (Deve Kusu)";
     }
 }

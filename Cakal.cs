@@ -8,7 +8,7 @@ namespace Yarisma
            
        }
 
-       public override string ToString() => $"Contestant : {this.Number} - {this.Name} (Cakal)";
+       public override string ToString() => $"Contestant {this.Number} : {this.Name} (Cakal)";
     }
 
      
