@@ -2,7 +2,19 @@ namespace Yarisma
 {
     abstract class Animal : IYarismaci
     {
-        public string Name { get; set;}
+        private string name;
+        public string Name 
+        { 
+            get
+            { return name; }
+            set
+            {
+                if(value == null)
+                    throw new ArgumentException("Name connot be empty");
+                else
+                    name = value;
+            }
+        }
 
         public uint Position { get; set;}
         

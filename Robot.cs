@@ -2,9 +2,27 @@ namespace Yarisma
 {
     abstract class Robot : IYarismaci
     {
-        public bool Bozuldu;
 
-        public string Name { get; set;}
+        private string name;
+        private uint number;
+
+
+        public bool Bozuldu {get; set;}
+
+        public string Name 
+        { 
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if(value == null)
+                    throw new ArgumentException("Name connot be empty");
+                else
+                    name = value;
+            }
+        }
 
         public uint Position { get; set;}
         
