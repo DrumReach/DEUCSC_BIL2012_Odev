@@ -14,6 +14,10 @@ namespace Yarisma
 
             // DEBUG
              
+             foreach(IYarismaci cont in testYarismasi.yarismacilar)
+             {
+                 System.Console.WriteLine(cont);
+             }
 
 
 

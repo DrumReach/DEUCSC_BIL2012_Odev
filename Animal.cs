@@ -1,9 +1,7 @@
 namespace Yarisma
 {
-    abstract class Robot : IYarismaci
+    abstract class Animal : IYarismaci
     {
-        public bool Bozuldu;
-
         public string Name { get; set;}
 
         public uint Position { get; set;}
@@ -13,16 +11,14 @@ namespace Yarisma
 
         public void Move()
         {
-
+            
         }
 
-        public Robot(uint number, string name)
+        public Animal(uint number, string name)
         {
             Name = name;
             Number = number;
             Position = 0;
-            Bozuldu = false;
         }
-
     }
 }

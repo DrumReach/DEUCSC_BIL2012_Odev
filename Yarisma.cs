@@ -4,7 +4,7 @@ namespace Yarisma
     interface IYarismaci
     {
         string Name { get; set;}
-        uint Konum { get; set;}
+        uint Position { get; set;}
         
         uint Number { get; set;}
 
@@ -14,7 +14,7 @@ namespace Yarisma
     class Yarisma
     {
 
-        List<IYarismaci> yarismacilar;
+        public List<IYarismaci> yarismacilar;
         
         private uint trackLength;
         public uint TrackLength
@@ -36,41 +36,53 @@ namespace Yarisma
             //Read from file
             string[] lines = File.ReadAllLines(filePath);
             string[] parts;
+
             IYarismaci yarismaci;
-            foreach(string line in lines)
+            yarismacilar = new List<IYarismaci>();
+
+            //check if file is empty
+            if(lines is not null)
             {
-                //Split and assign
-                parts = line.Split(' ');
-                // 0 is number 1 is name 2 is type
-
-                if(parts[2] == "SALYANBOT")
+                foreach(string line in lines)
                 {
-                    yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1]);
-                    yarismacilar.Add(yarismaci);
+                    //Split and assign
+                    parts = line.Split(' ');
                     
-                    System.Console.WriteLine(yarismaci);
+                    // 0 is number 1 is name 2 is type
+                    if(parts[2] == "SALYANBOT")
+                    {
+                        yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1]);
+                        yarismacilar.Add(yarismaci);
+                    }
+
+                    else if (parts[2] == "MEKANIKFIL")
+                    {
+                        yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1]);
+                        yarismacilar.Add(yarismaci);
+                    }
+
+                    else if (parts[2] == "CAKAL")
+                    {
+                        yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1]);
+                        yarismacilar.Add(yarismaci);
+                    }
+
+                    else if (parts[2] == "DEVEKUSU")
+                    {
+                        yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1]);
+                        yarismacilar.Add(yarismaci);
+                    }
+
+                    else
+                    {
+                        throw new FormatException("Unknown contestant type");
+                    }
+                    
                 }
-
-                else if (parts[2] == "MEKANIKFIL")
-                {
-                    yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1]);
-                    yarismacilar.Add(yarismaci);
-                }
-
-                else if (parts[2] == "CAKAL")
-                {
-
-                }
-
-                else if (parts[2] == "DEVEKUSU")
-                {
-
-                }
-
-                else
-                {
-                    throw new FormatException("Unknown contestant type");
-                }
+            }
+            else
+            {
+                throw new Exception("File is empty");
             }
         }
     }
