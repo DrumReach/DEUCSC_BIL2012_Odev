@@ -49,42 +49,57 @@ namespace Yarisma
                 string[] parts;
 
 
-                foreach(string line in lines)
-                {
+                
                     //Split and assign
-                    parts = line.Split(' ');
-                    
-                    // 0 is number 1 is name 2 is type
-                    if(parts[2] == "SALYANBOT")
+                    try
                     {
-                        yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1]);
-                        yarismacilar.Add(yarismaci);
+                        foreach(string line in lines)
+                        {   
+                            parts = line.Split(' ');
+
+                            // 0 is number 1 is name 2 is type
+                            if(parts[2] == "SALYANBOT")
+                            {
+                                yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismacilar.Add(yarismaci);
+                            }
+
+                            else if (parts[2] == "MEKANIKFIL")
+                            {
+                                yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismacilar.Add(yarismaci);
+                            }
+
+                            else if (parts[2] == "CAKAL")
+                            {
+                                yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismacilar.Add(yarismaci);
+                            }
+
+                            else if (parts[2] == "DEVEKUSU")
+                            {
+                                yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismacilar.Add(yarismaci);
+                            }
+
+                            else
+                            {
+                                throw new FormatException("Unknown contestant type, please check file");
+                            }
+
+                        }//for
+                    }//try
+
+                    catch(FormatException ex)
+                    {
+                        System.Console.WriteLine("Unknown contestant type\n" + ex.Message);
                     }
 
-                    else if (parts[2] == "MEKANIKFIL")
+                    catch(IndexOutOfRangeException ex)
                     {
-                        yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1]);
-                        yarismacilar.Add(yarismaci);
+                        System.Console.WriteLine(ex.Message + "\nFile is not formatted correctly!");
                     }
 
-                    else if (parts[2] == "CAKAL")
-                    {
-                        yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1]);
-                        yarismacilar.Add(yarismaci);
-                    }
-
-                    else if (parts[2] == "DEVEKUSU")
-                    {
-                        yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1]);
-                        yarismacilar.Add(yarismaci);
-                    }
-
-                    else
-                    {
-                        throw new FormatException("Unknown contestant type");
-                    }
-                    
-                }
             }
             catch (IOException ex)
             {
