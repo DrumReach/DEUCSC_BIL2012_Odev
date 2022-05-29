@@ -3,6 +3,7 @@ namespace Yarisma
     abstract class Animal : IYarismaci
     {
         private string name;
+        private uint number;
         public string Name 
         { 
             get
@@ -19,7 +20,12 @@ namespace Yarisma
         public uint Position { get; set;}
         
 
-        public uint Number { get; set;}
+        public uint Number 
+        { 
+            get {return number;}
+            
+            set { number = value; }
+        }
 
         public void Move()
         {
@@ -27,10 +33,12 @@ namespace Yarisma
         }
 
         public Animal(uint number, string name)
-        {
+        {   
+        
             Name = name;
             Number = number;
             Position = 0;
+
         }
     }
 }

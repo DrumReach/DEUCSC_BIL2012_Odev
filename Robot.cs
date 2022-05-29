@@ -27,7 +27,12 @@ namespace Yarisma
         public uint Position { get; set;}
         
 
-        public uint Number { get; set;}
+        public uint Number 
+        { 
+            get {return number;}
+            
+            set { number = value; }
+        }
 
         public void Move()
         {
