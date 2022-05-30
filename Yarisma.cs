@@ -96,10 +96,17 @@ namespace Yarisma
                 Console.WriteLine(ex.Message);
             }
 
-
+            
 
         }//Constructor
 
+        public void KonumlariYazdir() 
+        {
+            foreach(IYarismaci cont in yarismacilar)
+            {
+                Console.WriteLine($"{cont.Position} :: {cont.Number}, {cont.Name}");
+            }
+        }
         
     }
 }

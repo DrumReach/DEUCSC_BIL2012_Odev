@@ -19,6 +19,7 @@ namespace Yarisma
                  System.Console.WriteLine(cont);
              }
 
+            testYarismasi.KonumlariYazdir();
 
 
 
