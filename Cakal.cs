@@ -26,12 +26,12 @@ namespace Yarisma
                 Position += 2;
             }
 
-            // Check Position
-            if (Position < 0)
-                    Position = 0;
+            // // Check Position done in Pist.UpdatePosition()
+            // if (Position < 0)
+            //         Position = 0;
             
-            if (Position >= track.PistLen)
-                return;
+            // if (Position >= track.PistLen)
+            //     return;
         }
        public override string ToString() => $"Contestant {this.Number} : {this.Name} (Cakal)";
     }
