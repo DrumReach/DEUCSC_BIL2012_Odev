@@ -19,6 +19,10 @@ namespace Yarisma
                  System.Console.WriteLine(cont);
              }
 
+            
+            System.Console.WriteLine(testYarismasi.Track.PistLen);
+
+            testYarismasi.Baslat();
             testYarismasi.KonumlariYazdir();
 
 

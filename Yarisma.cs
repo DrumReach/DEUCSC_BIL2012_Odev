@@ -16,7 +16,7 @@ namespace Yarisma
 
         public List<IYarismaci> yarismacilar;
         
-        private Pist Track;
+        public Pist Track;
 
         public Yarisma(string filePath, uint length)
         {
@@ -105,6 +105,19 @@ namespace Yarisma
             foreach(IYarismaci cont in yarismacilar)
             {
                 Console.WriteLine($"{cont.Position} :: {cont.Number}, {cont.Name}");
+            }
+        }
+
+        public void Baslat()
+        {
+            //test
+            for(int i =0; i <= Track.PistLen - 1; i++)
+            {
+                foreach(IYarismaci cont in yarismacilar)
+                {
+                    cont.Position++;
+                    // cont.Move();
+                }
             }
         }
         
