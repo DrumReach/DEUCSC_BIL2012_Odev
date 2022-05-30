@@ -2,8 +2,8 @@ namespace Yarisma
 {
     class MekanikFil : Robot
     {
-        public MekanikFil(uint number, string name) 
-                        :base(number, name)
+        public MekanikFil(uint number, string name, Pist track) 
+                        :base(number, name ,track)
        {
            
        } 

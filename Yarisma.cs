@@ -50,25 +50,25 @@ namespace Yarisma
                             // 0 is number 1 is name 2 is type
                             if(parts[2] == "SALYANBOT")
                             {
-                                yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
                             }
 
                             else if (parts[2] == "MEKANIKFIL")
                             {
-                                yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
                             }
 
                             else if (parts[2] == "CAKAL")
                             {
-                                yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
                             }
 
                             else if (parts[2] == "DEVEKUSU")
                             {
-                                yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1]);
+                                yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
                             }
 
@@ -111,7 +111,7 @@ namespace Yarisma
         public void Baslat()
         {
             //test
-            for(int i =0; i <= Track.PistLen - 1; i++)
+            for(int i = 0; i <= Track.PistLen - 1; i++)
             {
                 foreach(IYarismaci cont in yarismacilar)
                 {

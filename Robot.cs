@@ -6,6 +6,8 @@ namespace Yarisma
         private string name;
         private uint number;
 
+        public Pist track;
+
 
         public bool Bozuldu {get; set;}
 
@@ -34,17 +36,18 @@ namespace Yarisma
             set { number = value; }
         }
 
-        public void Move()
+        public virtual void Move()
         {
 
         }
 
-        public Robot(uint number, string name)
+        public Robot(uint number, string name, Pist track)
         {
             Name = name;
             Number = number;
             Position = 0;
             Bozuldu = false;
+            this.track = track;
         }
 
     }

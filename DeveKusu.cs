@@ -2,8 +2,8 @@ namespace Yarisma
 {
     class DeveKusu : Animal
     {
-        public DeveKusu(uint number, string name) 
-                        :base(number, name)
+        public DeveKusu(uint number, string name, Pist track) 
+                        :base(number, name, track)
        {
            
        }
