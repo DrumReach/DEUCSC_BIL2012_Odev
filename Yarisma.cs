@@ -16,28 +16,18 @@ namespace Yarisma
 
         public List<IYarismaci> yarismacilar;
         
-        private uint trackLength;
-        public uint TrackLength
-        {
-            get { return this.trackLength; }
+        private Pist Track;
 
-            private set
-            {
-                if (value <= 0)
-                    throw new ArgumentOutOfRangeException("Pist Uzunlugu 0 dan buyuk olmali");
-                
-                this.trackLength = value;
-            }
-        }
         public Yarisma(string filePath, uint length)
         {
-            TrackLength = length;
             IYarismaci yarismaci;
             yarismacilar = new List<IYarismaci>();
+            
+            // Create Track
+            this.Track = new Pist(length);
+
 
             //Read from file
-            
-
             try
             {
                 string[] lines = File.ReadAllLines(filePath);
@@ -109,5 +99,7 @@ namespace Yarisma
 
 
         }//Constructor
+
+        
     }
 }
