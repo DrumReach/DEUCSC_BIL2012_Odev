@@ -12,15 +12,15 @@ namespace Yarisma
         {
             Yarisma testYarismasi = new Yarisma("yarismacilar.txt", 45);
 
-            // DEBUG
+            // ##DEBUG
              
-             foreach(IYarismaci cont in testYarismasi.yarismacilar)
-             {
-                 System.Console.WriteLine(cont);
-             }
+            foreach(IYarismaci cont in testYarismasi.yarismacilar)
+            {
+                System.Console.WriteLine(cont);
+            }
 
             
-            System.Console.WriteLine(testYarismasi.Track.PistLen);
+            System.Console.WriteLine(testYarismasi.Track.TrackLen);
 
             testYarismasi.Baslat();
             testYarismasi.KonumlariYazdir();

@@ -110,16 +110,7 @@ namespace Yarisma
 
         public void Baslat()
         {
-            //test
-            for(int i = 0; i <= Track.PistLen - 1; i++)//fuck this
-            {
-                foreach(IYarismaci cont in yarismacilar)
-                {
-                    cont.Move();
-                    
-                }
-
-            }
+            this.Track.UpdatePosition(yarismacilar);
         }
         
     }

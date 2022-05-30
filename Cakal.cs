@@ -27,13 +27,9 @@ namespace Yarisma
             }
 
             // // Check Position done in Pist.UpdatePosition()
-            // if (Position < 0)
-            //         Position = 0;
             
-            // if (Position >= track.PistLen)
-            //     return;
         }
-       public override string ToString() => $"Contestant {this.Number} : {this.Name} (Cakal)";
+       public override string ToString() => $"Contestant {this.Number} : {this.Name} ({this.GetType()})";
     }
 
      

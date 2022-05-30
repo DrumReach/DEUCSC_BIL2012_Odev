@@ -2,18 +2,26 @@ namespace Yarisma
 {
     class Pist
     {
-        private uint pistLen;
-        public uint PistLen
+        private uint trackLen;
+        public uint TrackLen
         {
-            get {return pistLen;}
+            get {return trackLen;}
             set 
             {
-                pistLen = value;
+                if(value > 0)
+                    trackLen = value;
+                else
+                    throw new ArgumentOutOfRangeException();
             }
         }
         public Pist(uint length)
         {
-            PistLen = length;
+            TrackLen = length;
+        }
+
+        public void UpdatePosition(List<IYarismaci> yarismacilar)
+        {
+            
         }
     }
 }
