@@ -124,8 +124,6 @@ namespace Yarisma
             while(flag)
             {
                 flag = Track.UpdatePosition(yarismacilar);
-                this.KonumlariYazdir();
-                System.Console.WriteLine();
             }
             
         }

@@ -31,7 +31,6 @@ namespace Yarisma
 
         public virtual void Move()
         {
-            Random rand = new Random();
             
         }
 
