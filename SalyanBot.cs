@@ -7,7 +7,12 @@ namespace Yarisma
                         :base(number, name, track)
        {
            
-       } 
+       }
+
+       public override void Move()
+       {
+            Position ++;
+       }
         
        public override string ToString() => $"Contestant {this.Number} : {this.Name} (SalyanBot)";
     }

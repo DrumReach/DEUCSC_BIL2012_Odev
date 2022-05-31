@@ -20,20 +20,19 @@ namespace Yarisma
             }
 
             
-            System.Console.WriteLine(testYarismasi.Track.TrackLen);
+            System.Console.WriteLine();
+
+            
+
+
 
             testYarismasi.Baslat();
             testYarismasi.KonumlariYazdir();
 
+            // Console.Write("\n\nYENİDENA\n\n\n");
 
-
-            //testYarismasi.Baslat();
-            //testYarismasi.KonumlariYazdir();
-
-            //Console.Write("\n\nYENİDENA\n\n\n");
-
-            //testYarismasi.Baslat();
-            //testYarismasi.KonumlariYazdir();
+            // testYarismasi.Baslat();
+            // testYarismasi.KonumlariYazdir();
 
         }
     }

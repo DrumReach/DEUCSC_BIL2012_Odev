@@ -4,7 +4,7 @@ namespace Yarisma
     interface IYarismaci
     {
         string Name { get; set;}
-        uint Position { get; set;}
+        int Position { get; set;}
         
         uint Number { get; set;}
 
@@ -102,6 +102,10 @@ namespace Yarisma
 
         public void KonumlariYazdir() 
         {
+            //Sort 
+
+            yarismacilar = yarismacilar.OrderBy(x => x.Position).ToList();
+
             foreach(IYarismaci cont in yarismacilar)
             {
                 Console.WriteLine($"{cont.Position} :: {cont.Number}, {cont.Name}");
@@ -110,7 +114,20 @@ namespace Yarisma
 
         public void Baslat()
         {
-            this.Track.UpdatePosition(yarismacilar);
+            //set initial state (required for multiple races without termination)
+            foreach(IYarismaci c in yarismacilar)
+                c.Position = 0;
+            
+            //Update return false if a contestant wins
+            bool flag = true;
+
+            while(flag)
+            {
+                flag = Track.UpdatePosition(yarismacilar);
+                this.KonumlariYazdir();
+                System.Console.WriteLine();
+            }
+            
         }
         
     }

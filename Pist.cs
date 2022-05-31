@@ -19,9 +19,25 @@ namespace Yarisma
             TrackLen = length;
         }
 
-        public void UpdatePosition(List<IYarismaci> yarismacilar)
+        public bool UpdatePosition(List<IYarismaci> yarismacilar)
         {
-            
+            foreach(IYarismaci c in yarismacilar)
+            {
+                c.Move();
+
+                //CHECK POSITION
+                
+                //check start line
+                if(c.Position < 0)
+                    c.Position = 0;
+
+                //check finish line
+                if(c.Position >= TrackLen)
+                    return false;
+                
+                
+            }
+            return true;
         }
     }
 }

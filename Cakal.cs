@@ -26,7 +26,7 @@ namespace Yarisma
                 Position += 2;
             }
 
-            // // Check Position done in Pist.UpdatePosition()
+            
             
         }
        public override string ToString() => $"Contestant {this.Number} : {this.Name} ({this.GetType()})";

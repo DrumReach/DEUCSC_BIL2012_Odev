@@ -26,7 +26,7 @@ namespace Yarisma
             }
         }
 
-        public uint Position { get; set;}
+        public int Position { get; set;}
         
 
         public uint Number 
@@ -38,7 +38,7 @@ namespace Yarisma
 
         public virtual void Move()
         {
-
+            
         }
 
         public Robot(uint number, string name, Pist track)
