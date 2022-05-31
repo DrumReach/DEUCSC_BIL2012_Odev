@@ -102,8 +102,7 @@ namespace Yarisma
 
         public void KonumlariYazdir() 
         {
-            //Sort 
-
+            //Sort List by position
             yarismacilar = yarismacilar.OrderBy(x => x.Position).ToList();
 
             foreach(IYarismaci cont in yarismacilar)
@@ -117,8 +116,9 @@ namespace Yarisma
             //set initial state (required for multiple races without termination)
             foreach(IYarismaci c in yarismacilar)
                 c.Position = 0;
-            
-            //Update return false if a contestant wins
+
+            //UpdatePosition() returns false if a contestant wins
+            // used for looping each step
             bool flag = true;
 
             while(flag)

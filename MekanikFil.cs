@@ -13,18 +13,16 @@ namespace Yarisma
             Random rand = new Random();
             double step = rand.NextDouble();
 
+            // %10 kosma
             if (step <= 0.1)
-            {// %10 kosma
                 Position += 3;
-            }
+            
+            // %40 yurume
             else if (step <= 0.5)
-            {// %40 yurume
                 Position += 2;
-            }
-            else
-            {// %50 bekleme
-                ;// do nothing
-            }
+            
+            // %50 bekleme
+            // do nothing
         }
 
         public override string ToString() => $"Contestant {this.Number} : {this.Name} (Mekanik Fil)";

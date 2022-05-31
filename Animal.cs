@@ -2,7 +2,7 @@ namespace Yarisma
 {
     abstract class Animal : IYarismaci
     {
-        private string name;
+        private string name = default!;
         private uint number;
 
         public Pist track;
@@ -17,7 +17,7 @@ namespace Yarisma
                 else
                     name = value;
             }
-        }
+        } 
 
         public int Position { get; set;}
         

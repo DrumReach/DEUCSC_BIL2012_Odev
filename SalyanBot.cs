@@ -11,6 +11,7 @@ namespace Yarisma
 
        public override void Move()
        {
+           // %100 surunme
             Position ++;
        }
         

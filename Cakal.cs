@@ -10,26 +10,26 @@ namespace Yarisma
 
         public override void Move()
         {  
+            // guess a random double between 0 and 1
+            // to calculate probability of a step
             Random rand = new Random();
             double step = rand.NextDouble();
-
+            
+            // %20 kayma
             if (step <= 0.2)
-            {// %20 kayma
                 Position -= 4;
-            }
+            
+            // %30 kosma
             else if (step <= 0.5)
-            {// %30 kosma
                 Position += 3;
-            }
+            
+            // %50 yurume
             else
-            {// %50 yurume
                 Position += 2;
-            }
 
-            
-            
         }
-       public override string ToString() => $"Contestant {this.Number} : {this.Name} ({this.GetType()})";
+        // can be used for printing list of contestants
+        public override string ToString() => $"Contestant {this.Number} : {this.Name} ({this.GetType()})";
     }
 
      

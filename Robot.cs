@@ -3,7 +3,7 @@ namespace Yarisma
     abstract class Robot : IYarismaci
     {
 
-        private string name;
+        private string name = default!;
         private uint number;
 
         public Pist track;
