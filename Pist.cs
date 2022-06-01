@@ -21,9 +21,15 @@ namespace Yarisma
 
         public bool UpdatePosition(List<IYarismaci> yarismacilar)
         {
+            // Take a random guess at every turn
+            //to decide the chances of special cases
+            Random rand = new Random();
+            double guess = rand.NextDouble();
+            
             foreach(IYarismaci c in yarismacilar)
             {
                 c.Move();
+
                 //CHECK POSITION
                 
                 //check start line
@@ -35,42 +41,25 @@ namespace Yarisma
                     return false;
                 
                 
-                //OPT 1
-                // if (c.GetType() == typeof(Cakal))
-                // {
-                //     foreach(IYarismaci x in yarismacilar)
-                //     {
-                //         if(x.GetType() == typeof(DeveKusu) &&
-                //            x.Position != 0 && 
-                //            x.Position == c.Position)
-                //         {
-                //             //trick to access property DeveKusu.Paralized
-                //             DeveKusu dk = (DeveKusu)x;
-                //             dk.Paralized = true;
-                //             System.Console.WriteLine($"!!{dk} IS PARALIZED #");
-                //         }
-                //     }
-                // }
-                // OPT 2
-                if (c.GetType() == typeof(Cakal))
+                // SPECIAL CASES
+
+                //#1 Opt.1
+                // Cakal - DeveKusu (%50 chance)
+                if (guess > 0.5 && c.GetType() == typeof(Cakal))
                 {
-                    List<IYarismaci> ds = yarismacilar.FindAll(x => x.GetType() == typeof(DeveKusu));
-                    foreach (IYarismaci d in ds)
+                    foreach(IYarismaci x in yarismacilar)
                     {
-                        if(c.Position == d.Position && d.Position != 0)
+                        if(x.GetType() == typeof(DeveKusu) && 
+                           x.Position != 0 && x.Position == c.Position)
                         {
-                            DeveKusu dk = (DeveKusu)d;
+                            //trick to access property DeveKusu.Paralized
+                            DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
                             System.Console.WriteLine($"!!{dk} IS PARALIZED #");
                         }
                     }
                 }
             }
-
-            
-
-            
-
             return true;
         }
     }
