@@ -37,25 +37,25 @@ namespace Yarisma
                             parts = line.Split(' ');
 
                             // parts 0 is number 1 is name 2 is type
-                            if(parts[2] == "SALYANBOT")
+                            if(parts[2].ToUpper() == "SALYANBOT")
                             {
                                 yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
                             }
 
-                            else if (parts[2] == "MEKANIKFIL")
+                            else if (parts[2].ToUpper() == "MEKANIKFIL")
                             {
                                 yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
                             }
 
-                            else if (parts[2] == "CAKAL")
+                            else if (parts[2].ToUpper() == "CAKAL")
                             {
                                 yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
                             }
 
-                            else if (parts[2] == "DEVEKUSU")
+                            else if (parts[2].ToUpper() == "DEVEKUSU")
                             {
                                 yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1], this.Track);
                                 yarismacilar.Add(yarismaci);
