@@ -109,13 +109,22 @@ namespace Yarisma
             {
                 Console.WriteLine($"{cont.Position} :: {cont.Number}, {cont.Name}");
             }
+            
         }
 
         public void Baslat()
         {
             //set initial state (required for multiple races without termination)
             foreach(IYarismaci c in yarismacilar)
+            {
                 c.Position = 0;
+                if (c.GetType() == typeof(DeveKusu))
+                {
+                    DeveKusu dk = (DeveKusu)c;
+                    dk.Paralized = false;
+                }
+
+            }
 
             //UpdatePosition() returns false if a contestant wins
             // used for looping each step
