@@ -2,6 +2,16 @@ namespace Yarisma
 {
     abstract class Animal : IYarismaci
     {
+        public Animal(uint number, string name, Pist track)
+        {   
+        
+            Name = name;
+            Number = number;
+            Position = 0;
+            this.track = track;
+
+        }
+        
         private string name = default!;
         private uint number;
 
@@ -29,19 +39,7 @@ namespace Yarisma
             set { number = value; }
         }
 
-        public virtual void Move()
-        {
-            
-        }
+        public abstract void Move();
 
-        public Animal(uint number, string name, Pist track)
-        {   
-        
-            Name = name;
-            Number = number;
-            Position = 0;
-            this.track = track;
-
-        }
     }
 }

@@ -36,7 +36,7 @@ namespace Yarisma
                         {   
                             parts = line.Split(' ');
 
-                            // 0 is number 1 is name 2 is type
+                            // parts 0 is number 1 is name 2 is type
                             if(parts[2] == "SALYANBOT")
                             {
                                 yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1], this.Track);
@@ -66,9 +66,8 @@ namespace Yarisma
                                 throw new FormatException("Unknown contestant type, please check file");
                             }
 
-                        }//for
-                    }//try
-
+                        }
+                    }
                     catch(FormatException ex)
                     {
                         System.Console.WriteLine("Unknown contestant type\n" + ex.Message);
@@ -84,10 +83,7 @@ namespace Yarisma
             {
                 Console.WriteLine(ex.Message);
             }
-
-            
-
-        }//Constructor
+        }
 
         public void KonumlariYazdir() 
         {
@@ -107,6 +103,7 @@ namespace Yarisma
             foreach(IYarismaci c in yarismacilar)
             {
                 c.Position = 0;
+                //heal paralized
                 if (c.GetType() == typeof(DeveKusu))
                 {
                     DeveKusu dk = (DeveKusu)c;
@@ -114,16 +111,13 @@ namespace Yarisma
                 }
             }
 
-            //UpdatePosition() returns false if a contestant wins
+            // UpdatePosition() returns false if a contestant wins
             // used for looping each step
             bool flag = true;
-
             while(flag)
             {
                 flag = Track.UpdatePosition(yarismacilar);
             }
-            
         }
-        
     }
 }

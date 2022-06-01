@@ -2,6 +2,14 @@ namespace Yarisma
 {
     abstract class Robot : IYarismaci
     {
+        public Robot(uint number, string name, Pist track)
+        {
+            Name = name;
+            Number = number;
+            Position = 0;
+            Bozuldu = false;
+            this.track = track;
+        }
 
         private string name = default!;
         private uint number;
@@ -36,19 +44,7 @@ namespace Yarisma
             set { number = value; }
         }
 
-        public virtual void Move()
-        {
-            
-        }
-
-        public Robot(uint number, string name, Pist track)
-        {
-            Name = name;
-            Number = number;
-            Position = 0;
-            Bozuldu = false;
-            this.track = track;
-        }
+        public abstract void Move();
 
     }
 }

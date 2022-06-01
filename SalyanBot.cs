@@ -11,8 +11,11 @@ namespace Yarisma
 
        public override void Move()
        {
-           // %100 surunme
-            Position ++;
+           if(!Bozuldu)
+           {
+                // %100 surunme
+                Position ++;
+           }
        }
         
        public override string ToString() => $"{this.Number} : {this.Name} (SalyanBot)";

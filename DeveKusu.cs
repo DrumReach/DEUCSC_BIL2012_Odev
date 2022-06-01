@@ -6,12 +6,12 @@ namespace Yarisma
 
         public DeveKusu(uint number, string name, Pist track) 
                         :base(number, name, track)
-       {
+        {
            Paralized = false;
-       }
+        }
 
-       public override void Move()
-       {    
+        public override void Move()
+        {    
             //check if paralized
             if(!Paralized)
             {
@@ -32,6 +32,6 @@ namespace Yarisma
             }    
         }
 
-       public override string ToString() => $"{this.Number} : {this.Name} (Deve Kusu)";
+        public override string ToString() => $"{this.Number} : {this.Name} (Deve Kusu)";
     }
 }
