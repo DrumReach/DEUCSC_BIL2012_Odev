@@ -36,35 +36,35 @@ namespace Yarisma
                 
                 
                 //OPT 1
-                // if (c.GetType() == typeof(Cakal))
-                // {
-                //     foreach(IYarismaci x in yarismacilar)
-                //     {
-                //         if(x.GetType() == typeof(DeveKusu) &&
-                //            x.Position != 0 && 
-                //            x.Position == c.Position)
-                //         {
-                //             //trick to access property DeveKusu.Paralized
-                //             DeveKusu dk = (DeveKusu)x;
-                //             dk.Paralized = true;
-                //             System.Console.WriteLine($"!!{dk} IS PARALIZED #");
-                //         }
-                //     }
-                // }
-                // OPT 2
                 if (c.GetType() == typeof(Cakal))
                 {
-                    List<IYarismaci> ds = yarismacilar.FindAll(x => x.GetType() == typeof(DeveKusu));
-                    foreach (IYarismaci d in ds)
+                    foreach(IYarismaci x in yarismacilar)
                     {
-                        if(c.Position == d.Position && d.Position != 0)
+                        if(x.GetType() == typeof(DeveKusu) &&
+                           x.Position != 0 && 
+                           x.Position == c.Position)
                         {
-                            DeveKusu dk = (DeveKusu)d;
+                            // Trick to access property DeveKusu.Paralized
+                            DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
                             System.Console.WriteLine($"!!{dk} IS PARALIZED #");
                         }
                     }
                 }
+                // OPT 2
+                // if (c.GetType() == typeof(Cakal))
+                // {
+                //     List<IYarismaci> ds = yarismacilar.FindAll(x => x.GetType() == typeof(DeveKusu));
+                //     foreach (IYarismaci d in ds)
+                //     {
+                //         if(c.Position == d.Position && d.Position != 0)
+                //         {
+                //             DeveKusu dk = (DeveKusu)d;
+                //             dk.Paralized = true;
+                //             System.Console.WriteLine($"!!{dk} IS PARALIZED #");
+                //         }
+                //     }
+                // }
             }
 
             

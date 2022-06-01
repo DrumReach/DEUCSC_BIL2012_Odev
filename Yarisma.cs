@@ -123,7 +123,6 @@ namespace Yarisma
                     DeveKusu dk = (DeveKusu)c;
                     dk.Paralized = false;
                 }
-
             }
 
             //UpdatePosition() returns false if a contestant wins
