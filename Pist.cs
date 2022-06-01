@@ -43,6 +43,9 @@ namespace Yarisma
                 
 
                 // SPECIAL CASES
+                
+                //if one contestant has a special trait 
+                //check for it  on it's every turn (linear search)
 
                 //#1 Opt.1
                 // Cakal - DeveKusu (%50 chance)
@@ -56,7 +59,38 @@ namespace Yarisma
                             //trick to access property DeveKusu.Paralized
                             DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
-                            System.Console.WriteLine($"!!{dk} IS PARALIZED #");
+                            Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
+                        }
+                    }
+                }
+
+                //#2 opt.1
+                //MekanikFil - DeveKusu
+                else if (guess <= 0.2 && c.GetType() == typeof(MekanikFil))
+                {
+                    foreach(IYarismaci x in yarismacilar)
+                    {
+                        if(x.GetType() == typeof(DeveKusu) && 
+                           x.Position != 0 && x.Position == c.Position)
+                        {
+                            //trick to access property DeveKusu.Paralized
+                            DeveKusu dk = (DeveKusu)x;
+                            dk.Paralized = true;
+                            Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
+                        }
+                    }
+                }
+
+                //#3 Opt.1
+                //SalyanBot
+                if(guess <= 0.25 && c.GetType() == typeof(SalyanBot))
+                {
+                    foreach(IYarismaci x in yarismacilar)
+                    {
+                        if(x.Position != 0 && x.Position == c.Position)
+                        {
+                            x.Position--;
+                            //System.Console.WriteLine($"{x.Name} got a SETBACK at {x.Position}");
                         }
                     }
                 }

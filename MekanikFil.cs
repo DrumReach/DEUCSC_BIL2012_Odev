@@ -25,6 +25,6 @@ namespace Yarisma
             // do nothing
         }
 
-        public override string ToString() => $"Contestant {this.Number} : {this.Name} (Mekanik Fil)";
+        public override string ToString() => $"{this.Number} : {this.Name} (Mekanik Fil)";
     }
 }
