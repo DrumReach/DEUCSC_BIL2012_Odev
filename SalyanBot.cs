@@ -15,7 +15,7 @@ namespace Yarisma
             Position ++;
        }
         
-       public override string ToString() => $"Contestant {this.Number} : {this.Name} (SalyanBot)";
+       public override string ToString() => $"{this.Number} : {this.Name} (SalyanBot)";
     }
 
     

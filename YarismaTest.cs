@@ -13,23 +13,19 @@ namespace Yarisma
             Yarisma testYarismasi = new Yarisma("yarismacilar.txt", 45);
 
             // ##DEBUG
-             
+            
+            Console.WriteLine("## CONTESTANTS ##");
             foreach(IYarismaci cont in testYarismasi.yarismacilar)
-            {
-                System.Console.WriteLine(cont);
-            }
+                Console.WriteLine(cont);
+
+            Console.WriteLine();
 
             
-            System.Console.WriteLine();
-
-            
-
-
 
             testYarismasi.Baslat();
             testYarismasi.KonumlariYazdir();
 
-            Console.Write("\n\nYENİDENA\n\n\n");
+            Console.Write("\n\nYENİDEN\n\n\n");
 
             testYarismasi.Baslat();
             testYarismasi.KonumlariYazdir();

@@ -29,7 +29,7 @@ namespace Yarisma
 
         }
         // can be used for printing list of contestants
-        public override string ToString() => $"Contestant {this.Number} : {this.Name} ({this.GetType()})";
+        public override string ToString() => $"{this.Number} : {this.Name} ({this.GetType()})";
     }
 
      
