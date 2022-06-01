@@ -21,9 +21,15 @@ namespace Yarisma
 
         public bool UpdatePosition(List<IYarismaci> yarismacilar)
         {
+            // Take a random guess at every turn
+            //to decide the chances of special cases
+            Random rand = new Random();
+            double guess = rand.NextDouble();
+            
             foreach(IYarismaci c in yarismacilar)
             {
                 c.Move();
+
                 //CHECK POSITION
                 
                 //check start line
@@ -35,6 +41,7 @@ namespace Yarisma
                     return false;
                 
                 
+<<<<<<< HEAD
                 //OPT 1
                 if (c.GetType() == typeof(Cakal))
                 {
@@ -45,6 +52,20 @@ namespace Yarisma
                            x.Position == c.Position)
                         {
                             // Trick to access property DeveKusu.Paralized
+=======
+                // SPECIAL CASES
+
+                //#1 Opt.1
+                // Cakal - DeveKusu (%50 chance)
+                if (guess > 0.5 && c.GetType() == typeof(Cakal))
+                {
+                    foreach(IYarismaci x in yarismacilar)
+                    {
+                        if(x.GetType() == typeof(DeveKusu) && 
+                           x.Position != 0 && x.Position == c.Position)
+                        {
+                            //trick to access property DeveKusu.Paralized
+>>>>>>> test
                             DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
                             System.Console.WriteLine($"!!{dk} IS PARALIZED #");
@@ -66,11 +87,6 @@ namespace Yarisma
                 //     }
                 // }
             }
-
-            
-
-            
-
             return true;
         }
     }
