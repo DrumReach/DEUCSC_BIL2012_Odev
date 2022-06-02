@@ -82,12 +82,12 @@ namespace Yarisma
                 }
 
                 //#3 Opt.1
-                //SalyanBot
-                if(guess <= 0.25 && c.GetType() == typeof(SalyanBot))
+                //SalyanBot (%25 chance between .2 and .45 so it wouldn't conflict with other special cases)
+                if(guess > 0.2 && guess < 0.45 && c.GetType() == typeof(SalyanBot))
                 {
                     foreach(IYarismaci x in yarismacilar)
                     {
-                        if(x.Position != 0 && x.Position == c.Position)
+                        if(x.GetType() != typeof(SalyanBot) && x.Position != 0 && x.Position == c.Position)
                         {
                             x.Position--;
                             //System.Console.WriteLine($"{x.Name} got a SETBACK at {x.Position}");
