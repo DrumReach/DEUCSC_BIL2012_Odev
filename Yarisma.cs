@@ -29,54 +29,54 @@ namespace Yarisma
 
 
                 
-                    //Split and assign
-                    try
-                    {
-                        foreach(string line in lines)
-                        {   
-                            parts = line.Split(' ');
+                //Split and assign
+                try
+                {
+                    foreach(string line in lines)
+                    {   
+                        parts = line.Split(' ');
 
-                            // parts 0 is number 1 is name 2 is type
-                            if(parts[2].ToUpper() == "SALYANBOT")
-                            {
-                                yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1], this.Track);
-                                yarismacilar.Add(yarismaci);
-                            }
-
-                            else if (parts[2].ToUpper() == "MEKANIKFIL")
-                            {
-                                yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1], this.Track);
-                                yarismacilar.Add(yarismaci);
-                            }
-
-                            else if (parts[2].ToUpper() == "CAKAL")
-                            {
-                                yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1], this.Track);
-                                yarismacilar.Add(yarismaci);
-                            }
-
-                            else if (parts[2].ToUpper() == "DEVEKUSU")
-                            {
-                                yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1], this.Track);
-                                yarismacilar.Add(yarismaci);
-                            }
-
-                            else
-                            {
-                                throw new FormatException("Unknown contestant type, please check file");
-                            }
-
+                        // parts 0 is number 1 is name 2 is type
+                        if(parts[2].ToUpper() == "SALYANBOT")
+                        {
+                            yarismaci = new SalyanBot(Convert.ToUInt32(parts[0]), parts[1], this.Track);
+                            yarismacilar.Add(yarismaci);
                         }
-                    }
-                    catch(FormatException ex)
-                    {
-                        System.Console.WriteLine("Unknown contestant type\n" + ex.Message);
-                    }
 
-                    catch(IndexOutOfRangeException ex)
-                    {
-                        System.Console.WriteLine(ex.Message + "\nFile is not formatted correctly!");
+                        else if (parts[2].ToUpper() == "MEKANIKFIL")
+                        {
+                            yarismaci = new MekanikFil(Convert.ToUInt32(parts[0]), parts[1], this.Track);
+                            yarismacilar.Add(yarismaci);
+                        }
+
+                        else if (parts[2].ToUpper() == "CAKAL")
+                        {
+                            yarismaci = new Cakal(Convert.ToUInt32(parts[0]), parts[1], this.Track);
+                            yarismacilar.Add(yarismaci);
+                        }
+
+                        else if (parts[2].ToUpper() == "DEVEKUSU")
+                        {
+                            yarismaci = new DeveKusu(Convert.ToUInt32(parts[0]), parts[1], this.Track);
+                            yarismacilar.Add(yarismaci);
+                        }
+
+                        else
+                        {
+                            throw new FormatException("Unknown contestant type, please check file");
+                        }
+
                     }
+                }
+                catch(FormatException ex)
+                {
+                    System.Console.WriteLine("Unknown contestant type\n" + ex.Message);
+                }
+
+                catch(IndexOutOfRangeException ex)
+                {
+                    System.Console.WriteLine(ex.Message + "\nFile is not formatted correctly!");
+                }
 
             }
             catch (IOException ex)
