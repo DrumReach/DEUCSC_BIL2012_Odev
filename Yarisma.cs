@@ -63,7 +63,7 @@ namespace Yarisma
 
                         else
                         {
-                            throw new FormatException("Unknown contestant type, please check file");
+                            throw new FormatException();
                         }
 
                     }
@@ -73,9 +73,9 @@ namespace Yarisma
                     System.Console.WriteLine("Unknown contestant type\n" + ex.Message);
                 }
 
-                catch(IndexOutOfRangeException ex)
+                catch(IndexOutOfRangeException)
                 {
-                    System.Console.WriteLine(ex.Message + "\nFile is not formatted correctly!");
+                    System.Console.WriteLine("File is not formatted correctly!");
                 }
 
             }
