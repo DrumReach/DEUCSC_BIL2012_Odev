@@ -10,7 +10,7 @@ namespace Yarisma
     {
         static void Main(string[] args)
         {
-            Yarisma testYarismasi = new Yarisma("yarismacilar.txt", 145);
+            Yarisma testYarismasi = new Yarisma("yarismacilar.txt", 50);
 
             // (Optional) Print Contestant list at the start
             /*
@@ -19,11 +19,6 @@ namespace Yarisma
                 Console.WriteLine(cont);
             */
             Console.WriteLine();
-
-            testYarismasi.Baslat();
-            testYarismasi.KonumlariYazdir();
-
-            Console.Write("\n\nYENİDEN\n\n\n");
 
             testYarismasi.Baslat();
             testYarismasi.KonumlariYazdir();

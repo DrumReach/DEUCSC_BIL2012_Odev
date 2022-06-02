@@ -38,7 +38,12 @@ namespace Yarisma
 
                 //check finish line
                 if(c.Position >= TrackLen)
+                {
+                    // use this trick to block finish line 
+                    // instead of checking each step
+                    c.Position = (int)TrackLen;
                     return false;
+                }
                 
                 
 
@@ -90,10 +95,11 @@ namespace Yarisma
                         if(x.GetType() != typeof(SalyanBot) && x.Position != 0 && x.Position == c.Position)
                         {
                             x.Position--;
-                            //System.Console.WriteLine($"{x.Name} got a SETBACK at {x.Position}");
+                            System.Console.WriteLine($"{x.Name} got a SETBACK at {x.Position}");
                         }
                     }
                 }
+
             }
             return true;
         }
