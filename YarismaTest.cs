@@ -23,6 +23,11 @@ namespace Yarisma
             testYarismasi.Baslat();
             testYarismasi.KonumlariYazdir();
 
+            Console.WriteLine();
+
+            testYarismasi.Baslat();
+            testYarismasi.KonumlariYazdir();
+
         }
     }
 }

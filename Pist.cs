@@ -41,6 +41,7 @@ namespace Yarisma
                 {
                     // use this trick to block finish line 
                     // instead of checking each step
+                    // ex. a step is +4 instead of 4 * (+1)
                     c.Position = (int)TrackLen;
                     return false;
                 }
@@ -64,7 +65,7 @@ namespace Yarisma
                             //trick to access property DeveKusu.Paralized
                             DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
-                            Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
+                            //Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
                         }
                     }
                 }
@@ -81,7 +82,7 @@ namespace Yarisma
                             //trick to access property DeveKusu.Paralized
                             DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
-                            Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
+                            //Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
                         }
                     }
                 }
@@ -95,7 +96,8 @@ namespace Yarisma
                         if(x.GetType() != typeof(SalyanBot) && x.Position != 0 && x.Position == c.Position)
                         {
                             x.Position--;
-                            System.Console.WriteLine($"{x.Name} got a SETBACK at {x.Position}");
+                            //Useful to see behind the scenes
+                            //System.Console.WriteLine($"{x.Name} got a SETBACK at {x.Position}");
                         }
                     }
                 }
