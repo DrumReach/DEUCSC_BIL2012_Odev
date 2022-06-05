@@ -48,13 +48,12 @@ namespace Yarisma
                 
                 
 
-                // SPECIAL CASES
+                /* SPECIAL CASES */
                 
                 //if one contestant has a special trait 
                 //check for it  on it's every turn (linear search)
 
-                //#1 Opt.1
-                // Cakal - DeveKusu (%50 chance)
+                //#1 Cakal - DeveKusu (%50 chance)
                 if (guess > 0.5 && c.GetType() == typeof(Cakal))
                 {
                     foreach(IYarismaci x in yarismacilar)
@@ -65,13 +64,13 @@ namespace Yarisma
                             //trick to access property DeveKusu.Paralized
                             DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
+
                             //Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
                         }
                     }
                 }
 
-                //#2 opt.1
-                //MekanikFil - DeveKusu
+                //#2 MekanikFil - DeveKusu
                 else if (guess <= 0.2 && c.GetType() == typeof(MekanikFil))
                 {
                     foreach(IYarismaci x in yarismacilar)
@@ -82,13 +81,13 @@ namespace Yarisma
                             //trick to access property DeveKusu.Paralized
                             DeveKusu dk = (DeveKusu)x;
                             dk.Paralized = true;
+
                             //Console.WriteLine($"!!{dk} IS PARALIZED by {c}");
                         }
                     }
                 }
 
-                //#3 Opt.1
-                //SalyanBot (%25 chance between .2 and .45 so it wouldn't conflict with other special cases)
+                //#3 SalyanBot (%25 chance between .2 and .45 so it wouldn't conflict with other special cases)
                 if(guess > 0.2 && guess < 0.45 && c.GetType() == typeof(SalyanBot))
                 {
                     foreach(IYarismaci x in yarismacilar)

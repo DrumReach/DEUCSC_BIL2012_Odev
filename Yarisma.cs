@@ -99,7 +99,7 @@ namespace Yarisma
 
         public void Baslat()
         {
-            //set initial state (required for multiple races without termination)
+            //Reset to initial state (required for multiple races without termination)
             foreach(IYarismaci c in yarismacilar)
             {
                 c.Position = 0;
@@ -114,10 +114,10 @@ namespace Yarisma
             // UpdatePosition() returns false if a contestant wins
             // used for looping each step
             bool flag = true;
+            
             while(flag)
-            {
                 flag = Track.UpdatePosition(yarismacilar);
-            }
+                
         }
     }
 }

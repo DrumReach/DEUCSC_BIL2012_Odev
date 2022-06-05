@@ -39,6 +39,7 @@ namespace Yarisma
             set { number = value; }
         }
 
+        //declared abstract because subclasses share no common operations
         public abstract void Move();
 
     }

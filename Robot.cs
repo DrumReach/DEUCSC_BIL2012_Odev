@@ -17,6 +17,8 @@ namespace Yarisma
         public Pist track;
 
 
+        //this property initialized to false at start and can be used in Pist.UpdatePsoition()
+        // it is not used in this case due to no special cases including a disfunctional robot
         public bool Bozuldu {get; set;}
 
         public string Name 

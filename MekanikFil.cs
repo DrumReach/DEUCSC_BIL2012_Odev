@@ -5,7 +5,7 @@ namespace Yarisma
         public MekanikFil(uint number, string name, Pist track) 
                         :base(number, name ,track)
        {
-           
+           // all the operations already done in base class constructor
        }
 
         public override void Move()
